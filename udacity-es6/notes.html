@@ -441,7 +441,90 @@
     <div class="section">
         <h2 id="builtins"><span>#</span> Built-ins</h2>
         <div>
-            <h3></h3>
+            <h3>1. New Built-ins</h3>
+            <ul>
+                <li>Sets, maps, and promises are some of the new built-ins of ES6</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>2. Symbols Intro</h3>
+            <ul>
+                <li>Symbol is the new primitive type that comes with ES6</li>
+                <li><strong>Symbol</strong> is a unique identifier, most often used to uniquely idenify properties
+                    within an object</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>3. Symbols</h3>
+            <ul>
+                <li>A <strong>symbol</strong> is a unique and immutable data type that is often used to identify object
+                    properties</li>
+                <li>To create a symbol, you write <strong>Symbol()</strong> with an optional string as its <em>description</em></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>4. Iteration & Iterable Protocols</h3>
+            <ul>
+                <li>The <strong>iterable protocol</strong> is used for defining and customizing the iteration behavior
+                    of objects</li>
+                <li>The <strong>iterator method</strong>, which is available via the constant <strong>[Symbol.iterator]</strong>,
+                    is a zero arguments function that returns an iterator object</li>
+                <li>The <strong>iterator protocol</strong> is used to define a standard way that an object produces a
+                    sequence of values, this means you now have a process for defining how an object will iterate</li>
+                <li>An object becomes an iterator when it implements the <strong>.next()</strong> method, it is a zero
+                    arguments function that returns an object with two properties:</li>
+                <ol>
+                    <li><strong>value</strong>: the data representing the next value in the sequence of values within
+                        the object</li>
+                    <li><strong>done</strong>: a boolean representing if the iterator is <em>done</em> going through
+                        the sequence of values</li>
+                    <ul>
+                        <li>If done is <em>true</em>, then the iterator has reached the end of its sequence of values</li>
+                        <li>If done is <em>false</em>, then the iterator is able to produce another value in its
+                            sequence of values</li>
+                    </ul>
+                </ol>
+            </ul>
+        </div>
+
+        <div>
+            <h3>5. Sets</h3>
+            <ul>
+                <li><strong>Set</strong> is a new built-in object that behaves like a mathematical set and works
+                    similarly to an array</li>
+                <li>The biggest differences between a set and an array are:</li>
+                <ul>
+                    <li>Sets are not indexed-based - you do not refer to items in a set based on their position in the
+                        set</li>
+                    <li>items in a Set can't be accessed individually</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div>
+            <h3>6. Modifying Sets</h3>
+            <ul>
+                <li>You can modify a set by using <strong>.add()</strong> and <strong>.delete()</strong></li>
+                <li>To delete all the items from a Set, use the <strong>.clear()</strong> method</li>
+                <li><strong>.add()</strong> returns the Set if an item is successfully added, while <strong>.delete()</strong>
+                    returns a Boolean (true or false) depending on successful deletion</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>7. Working with Sets</h3>
+            <ul>
+                <li>Sets can't be accessed by their index like an array, so you use the <strong>.size</strong> property instead of <strong>.length</strong> property to get the size of the Set</li>
+                <li>Use the <strong>.has()</strong> method to check if an item exists in a Set, the return value will be a Boolean</li>
+                <li>Use the <strong>.values()</strong> method to return the values in a Set, the return value of the <strong>.values()</strong> method is a <strong>SetIterator</strong> object</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>8. Sets & Iterators</h3>
             <ul>
                 <li></li>
             </ul>
