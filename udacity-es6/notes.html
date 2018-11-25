@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Notes for ES6</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:700|Roboto:300,400,500," rel="stylesheet">
+</head>
+
+<body>
+    <h1><span>&lt/&gt</span> ES6</h1>
+    <div class="table">
+        <h1>Contents</h1>
+        <ol>
+            <li><a href="#syntax">Syntax</a></li>
+            <li><a href="#functions">Functions</li>
+            <li><a href="#builtins">Built-ins</a></li>
+            <li><a href="#developerfu">Professional Developer-fu</a></li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2 id="syntax"><span>#</span> Syntax</h2>
+        <div>
+            <h3>1. Harmony, ES6, ES2015...</h3>
+            <ul>
+                <li>JS Harmony, ES6, ES2015 all refers to the same thing</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>2. Let and Const</h3>
+            <ul>
+                <li>There are two new ways to declare variables in JavaScript: <strong>let</strong> and <strong>const</strong></li>
+                <li>Essentially before any JavaScript code is executed, all variables are "hoisted", which means
+                    they're raised to the top of the function scope when using <strong>var</strong></li>
+                <ul>
+                    <li>However, variables declared with <strong>let</strong> and <strong>const</strong> eliminate this
+                        specific issue of hoisting because they're scoped <strong>to the block</strong>, not to the
+                        function</li>
+                    <li>Previously, when variables are declared using <strong>var</strong>, variables were either
+                        scoped <em>globally</em> or <em>locally</em> to an entire function scope</li>
+                </ul>
+                <li>If a variable is declared using <strong>let</strong> or <strong>const</strong> inside a block of
+                    code (denoted by curly braces <strong>{ }</strong>, then the variable is tuck in what is known as
+                    the <strong>temporal dead zone</strong> until the variable's declaration is processed</li>
+                <ul>
+                    <li>This behavior prevents variables from being accessed only until after they've been declared</li>
+                </ul>
+                <li><strong>let</strong> and <strong>const</strong> also have some other interesting properties</li>
+                <ul>
+                    <li>Variables declared with <strong>let</strong> can be <em>reassigned</em>, but <strong>can't</strong>
+                        be <em>redeclared</em> in the same scope</li>
+                    <li>Variables declared with <strong>const</strong> must be assigned an initial value, but <strong>can't</strong>
+                        be <em>redeclared</em> in the same scope, and <strong>can't</strong> be <em>reassigned</em></li>
+                </ul>
+                <li>Use <strong>let</strong> when you plan to reassign new values to a variable, and use <strong>const</strong>
+                    when you don't plan on reassigning new values to a variable</li>
+                <li>There are some arguments that can be made for using <strong>var</strong> in situations where you
+                    want to globally define variables, but this is often considered bad practice and should be avoided,
+                    from now one ditch <strong>var</strong> in place of using <strong>let</strong> and <strong>const</strong></li>
+                <li>Since <strong>const</strong> is the strictest way to declare a variable, use <strong>const</strong>
+                    and switch it to <strong>let</strong> if needed</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>3. Quiz: Using Let and Const (1-1)</h3>
+            <ul>
+                <li>A counter in a for loop is a good example of when to use <strong>let</strong></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>4. Template Literals</h3>
+            <ul>
+                <li><strong>Template literals</strong> are essentially string literals that include embedded
+                    expressions</li>
+                <ul>
+                    <li>Denoted with back ticks (` `) instead of single quotes (' ') or double quotes (" "), template
+                        literals can contain placeholders which are represented using <strong>${expression}</strong></li>
+                    <li>Template literals make it <em>much easier</em> to build strings</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div>
+            <h3>5. Quiz: Build an HTML Fragment (1-2)</h3>
+            <ul>
+                <li>Completed template literal exercise</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>6. Destructuring</h3>
+            <ul>
+                <li><strong>Destructuring</strong> borrows inspiration from languages like Perl and Python by allowing
+                    you to specify the elements you want to extract from an array or object <em>on the left side of an
+                        assignment</em></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>7. Quiz: Destructuring Arrays (1-3)</h3>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">More
+                        info on destructuring</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>8. Object Literal Shorthand</h3>
+            <ul>
+                <li>You can remove duplicate variable names from object properties if the properties have the same name
+                    as the variables being assigned to them</li>
+                <li>Having the <strong>function</strong> keyword in a method is redundant and now can be dropped in ES6</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>9. Lesson 1 Checkup</h3>
+            <ul>
+                <li>Watched video clip</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>10. Iteration</h3>
+            <ul>
+                <li><strong>for...of loop</strong> is a loop that iterates over iterable objects</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>11. Family of For Loops</h3>
+            <ul>
+                <li>The biggest downside of a for loop is having to keep track of <strong>the counter</strong> and
+                    <strong>exit condition</strong></li>
+                <li>The for...in loop improves upon the weaknesses of the for loop by eliminating the counting logic
+                    and exit condition, but still have to deal with the issue of using an <strong>index</strong> to
+                    access the values of the array</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>12. For...of Loop</h3>
+            <ul>
+                <li>The <strong>for...of loop</strong> is used to loop over any type of data that is <em>iterable</em></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>13. Quiz: Writing a For...of Loop(1-4)</h3>
+            <ul>
+                <li>Completed exercise using a for...of loop</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>14. Spread... Operator</h3>
+            <ul>
+                <li>The <strong>spread operator</strong>, written with three consecutive dots (...), is new in ES6 and
+                    gives you the ability to expand, or <em>spread</em>, iterable objects into multiple elements</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>15. ...Rest Parameter</h3>
+            <ul>
+                <li>The <strong>rest parameter</strong>, also written with three consecutive dots (...), allows you to
+                    represent an indefinite number of elements as an array</li>
+                <li>Another use case for the rest parameter is when you're working with variadic functions</li>
+                <li><strong>Variadic functions</strong> are functions that take an indefinite number of arguments</li>
+                <li>In previous versions of JavaScript, this type of function would be handled using the arguments
+                    object</li>
+                <li>The arguments object is an array-like object that is available as a local variable inside all
+                    functions</li>
+                <li>Using the rest parameter makes the function both more concise and and easier to read</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>16. Quiz: Using the Rest Parameter (1-5)</h3>
+            <ul>
+                <li>Completed exercise</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>17. Lesson 1 Summary</h3>
+            <ul>
+                <li>Watched video clip</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h2 id="functions"><span>#</span> Functions</h2>
+        <div>
+            <h3>1. Updates to Functions</h3>
+            <ul>
+                <li>New way to write functions called <strong>arrow functions</strong></li>
+                <li>A new keyword called <strong>class</strong></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>2. Arrow Functions</h3>
+            <ul>
+                <li><strong>Arrow functions</strong> are very similar to regular functions in behavior, but are quite
+                    different syntactically</li>
+                <li>The <strong>map()</strong> method creates a new array with the results of calling a provided
+                    function on every element in the calling array</li>
+                <li>There are only a few steps for converting the existing 'normal' function into an arrow function:</li>
+                <ul>
+                    <li>remove the function keyword</li>
+                    <li>remove the parentheses</li>
+                    <li>remove the opening and closing curly braces</li>
+                    <li>remove the return keyword</li>
+                    <li>remove the semicolon</li>
+                    <li>add an arrow (=>) between the parameter list and the function body</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div>
+            <h3>3. Using Arrow Functions</h3>
+            <ul>
+                <li>Regular functions can be either <strong>function declarations</strong> or <strong>function
+                        expressions</strong>, however arrow functions are always <strong>expressions</strong></li>
+                <li>Full name is "arrow function expressions", so they can only be used where an expression is valid,
+                    this includes being:</li>
+                <ul>
+                    <li>stored in a variable,</li>
+                    <li>passes as an argument to a function,</li>
+                    <li>and stored in an object's property</li>
+                </ul>
+                <li>The concise syntax (a single expression as the function body):</li>
+                <ul>
+                    <li>has no curly braces surrounding the function body</li>
+                    <li>and automatically returns the expression</li>
+                </ul>
+                <li>If you need more than just a single line of code in your arrow function's body, then you can use the "block body syntax"</li>
+                <li>Important things to keep in mind with the block syntax:</li>
+                <ul>
+                    <li>it uses curly braces to wrap the function body</li>
+                    <li>and a return statement needs to be used to actually return something from the function</li>
+                </ul>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h2 id="builtins"><span>#</span> Built-ins</h2>
+        <div>
+            <h3></h3>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 id="developerfu"><span>#</span> Professional Developer-fu</h2>
+        <div>
+            <h3></h3>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
