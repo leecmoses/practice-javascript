@@ -244,12 +244,195 @@
                     <li>has no curly braces surrounding the function body</li>
                     <li>and automatically returns the expression</li>
                 </ul>
-                <li>If you need more than just a single line of code in your arrow function's body, then you can use the "block body syntax"</li>
+                <li>If you need more than just a single line of code in your arrow function's body, then you can use
+                    the "block body syntax"</li>
                 <li>Important things to keep in mind with the block syntax:</li>
                 <ul>
                     <li>it uses curly braces to wrap the function body</li>
                     <li>and a return statement needs to be used to actually return something from the function</li>
                 </ul>
+            </ul>
+        </div>
+
+        <div>
+            <h3>4. Quiz: Convert Function into an Arrow Function (2-1)</h3>
+            <ul>
+                <li>Completed exercise</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>5. Arrow Functions Recap</h3>
+            <ul>
+                <li>The way arrow functions handle "this" keyword is different from regular functions</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>6. Arrow Functions and the "this" Keyword</h3>
+            <ul>
+                <li>How "this" works in an arrow function is based on where it is in the code</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>7. "this" and Regular Functions</h3>
+            <ul>
+                <li>The value of the <strong>this</strong> keyword is based completely on how its function (or method)
+                    is called</li>
+                <li>Determining the <strong>this</strong> binding for an executing function requires finding the
+                    direct-call-site of that function</li>
+                <li>Once examined, four rules can be applied to the call-site, in this order of precednce:</li>
+                <ol>
+                    <li>Called with <strong>new</strong>? Use the newly constructed object</li>
+                    <li>Called with <strong>call</strong> or <strong>apply</strong> (or <strong>bind</strong>)? Use the
+                        specified object</li>
+                    <li>Called with a context object owning the call? Use the context object</li>
+                    <li>Default: <strong>undefined</strong> in <strong>strict mode</strong>, global object otherwise</li>
+                </ol>
+                <li><a href="https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch2.md"
+                        target="_blank">More on "this"</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>8. "this" and Arrow Functions</h3>
+            <ul>
+                <li>With regular functions, the value of <strong>this</strong> is set based on <em>how the function is
+                        called, while with arrow functions, the value is based on <em>the function's surrounding
+                            context</em></em></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>9. Default Function Parameters</h3>
+            <ul>
+                <li><strong>Default function parameters</strong> are quite easy to read since they're placed in the
+                    function's parameter list</li>
+                <li>To create a default parameter, you add an equal sign (<strong>=</strong>) and then whatever you
+                    want the parameter to default to if an argument is not provided</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>10. Defaults and Destructuring</h3>
+            <ul>
+                <li>You can combine default function parameters with destructuring to create some pretty powerful
+                    functions</li>
+                <li>Unless you've got a strong reason to use array defaults with array destructuring, go with object
+                    defaults with object destructuring</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>11. Quiz: Using Default Function Parameters (2-2)</h3>
+            <ul>
+                <li>Completed exercise</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>12. Class Preview</h3>
+            <ul>
+                <li>There are a bunch of new keywords and syntax to play with when creating JavaScript classes</li>
+                <li>Before jumping into the specifics of how to write JavaScript classes, it is important to point out
+                    a rather confusing part about JS compared with class-based languages, see next section regarding
+                    classes</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>13. JavaScript's Illusion of Classes</h3>
+            <ul>
+                <li>ES6 introduces new keywords like class, super, extends but JS still uses functions and prototypal
+                    inheritance under the hood</li>
+                <li>Now we have a new cleaner way to write the same functionality</li>
+                <li>JavaScript is <em>not</em> a class based language, it uses functions to create objects and links
+                    objects together by prototypal inheritance</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>14. JavaScript Classes</h3>
+            <ul>
+                <li>ES5 "Class" Recap:</li>
+                <ul>
+                    <li>the constructor function is called with the <strong>new</strong> keyword</li>
+                    <li>the constructor function, by convention, starts with a capital letter</li>
+                    <li>the constructor function controls the setting of data on the objects that will be created</li>
+                    <li>"inherited" methods are placed on the constructor function's prototype object</li>
+                </ul>
+                <li>Keep these in mind as we look at how ES6 classes work because, remember, ES6 classes set up all of
+                    this for you under the hood</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>15. Convert a Function to a Class</h3>
+            <ul>
+                <li>Watched video clip and coded along</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>16. Working with JavaScript Classes</h3>
+            <ul>
+                <li>Class is just a function, it is not a new type that has been added to JavaScript!</li>
+                <li>Methods that appear in the class definition are placed on the class's prototype object and a class
+                    is just a function</li>
+                <li>To add a static method, the keyword <strong>static</strong> is placed in front of the method name</li>
+                <li>Things to look out for when using classes:</li>
+                <ol>
+                    <li><strong>class</strong> is not magic, the keyword brings with it a lot of mental constructs from
+                        other, class-based languages, it does not magically add this functionality to JavaScript
+                        classes</li>
+                    <li><strong>class</strong> is a mirage over prototypal inheritance</li>
+                    <li>Using classes requires the use of <strong>new</strong></li>
+                </ol>
+            </ul>
+        </div>
+
+        <div>
+            <h3>17. Super and Extends</h3>
+            <ul>
+                <li>The <strong>extends</strong> keyword is used to create a "subclass", and to get from the "subclass"
+                    to the parent class, the <strong>super</strong> keyword is used</li>
+                <li><strong>super</strong> can be used in two different ways: as a function and as an object!</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>18. Extending Classes from ES5 to ES6</h3>
+            <ul>
+                <li>With the older ES5 another constructor function is written to create the "subclass", then have to
+                    set the function's prototype to the base classes prototype, and finally remake the connection
+                    between constructor property and the original constructor function</li>
+                <li>ES6 uses the <strong>extends</strong> and <strong>super</strong> keywords to achieve the same thing</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>19. Working with JavaScript Subclasses</h3>
+            <ul>
+                <li>There is a lot less setup code and it's a lot cleaner syntax to create a subclass using class,
+                    super, and extends</li>
+                <li>Under the hood, the same connections are made between functions and prototypes</li>
+                <li>In a subclass constructor function <strong>super</strong> must be called before <strong>this</strong>
+                    can be used</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>20. Quiz: Building Classes and Subclasses (2-3)</h3>
+            <ul>
+                <li>Completed exercise</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>21. Lesson 2 Summary</h3>
+            <ul>
+                <li>Watched video clip</li>
             </ul>
         </div>
 
