@@ -526,6 +526,84 @@
         <div>
             <h3>8. Sets & Iterators</h3>
             <ul>
+                <li>You can use the Set's default iterator to step through each item in a Set, one by one or use the new <strong>for...of</strong> loop to loop through each item in a Set</li>
+                <li>Because the <strong>.values()</strong> method returns a new iterator object (called <strong>SetIterator)</strong>, you can store that iterator object in a variable and loop through each item in the Set using <strong>.next</strong></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>9. Quiz: Using Sets</h3>
+            <ul>
+                <li>Completed exercise</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>10. WeakSets</h3>
+            <ul>
+                <li>A WeakSet is just like a normal Set with a few key differences:</li>
+                <ol>
+                    <li>a WeakSet can only contain objects</li>
+                    <li>a WeakSet is not iterable which means it can't be looped over</li>
+                    <li>a WeakSet does not have a <strong>.clear()</strong> method</li>
+                </ol>
+                <li><strong>Garbage collection</strong> is the process of freeing up memory after it is no longer needed</li>
+                <li>WeakSets take advantage of this by exclusively working with objects, if you set an object to <strong>null</strong>, then you're essentially deleting the object</li>
+                <li>This makes WeakSets useful in situations where you want an efficient, lightweight solution for creating groups of objects</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>11. Quiz: Working With WeakSets</h3>
+            <ul>
+                <li>Completed exercise</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>12. Maps</h3>
+            <ul>
+                <li>Sets are to Arrays as Maps are to Objects</li>
+                <li>Maps use key value pairs</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>13. Creating & Modifying Maps</h3>
+            <ul>
+                <li>Unlike Sets, you can't create Maps from a list of values; instead, you add key-values by using the Map's <strong>.set()</strong> method</li>
+                <li>The <strong>.set()</strong> method takes two arguments, the first argument is the key, which is used to reference the second argument, the value</li>
+                <li>To remove key-value pairs, simply use the <strong>.delete()</strong> method</li>
+                <li>Use the <strong>.clear()</strong> method to remove all key-value pairs from the Map</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>14. Working with Maps</h3>
+            <ul>
+                <li>Use the <strong>.has()</strong> method to check if a key-value pair exists in your Map by passing it a key</li>
+                <li>You can retrieve values from a Map, by passing a key to the <strong>.get()</strong> method</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>15. Looping Through Maps</h3>
+            <ul>
+                <li>There are three different options to choose from when looping through a Map:</li>
+                <ol>
+                    <li>Step through each key or value using the Map's default iterator</li>
+                    <li>Loop through each key-value pair using the new <strong>for...of</strong> loop</li>
+                    <li>Loop through each key-value pair using the Map's <strong>.forEach()</strong> method</li>
+                </ol>
+                <li>Using the <strong>.keys()</strong> and <strong>.values()</strong> methods on a Map will return a new iterator object called <strong>MapIterator</strong></li>
+                <li>Using a <strong>for...of</strong> loop with a Map, returns an array where the first element is the key and the second element is the value</li>
+                <li>The <strong>.forEach()</strong> method with the help of an arrow function is fairly straightforward</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>16. WeakMaps</h3>
+            <ul>
                 <li></li>
             </ul>
         </div>
