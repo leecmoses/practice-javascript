@@ -517,17 +517,23 @@
         <div>
             <h3>7. Working with Sets</h3>
             <ul>
-                <li>Sets can't be accessed by their index like an array, so you use the <strong>.size</strong> property instead of <strong>.length</strong> property to get the size of the Set</li>
-                <li>Use the <strong>.has()</strong> method to check if an item exists in a Set, the return value will be a Boolean</li>
-                <li>Use the <strong>.values()</strong> method to return the values in a Set, the return value of the <strong>.values()</strong> method is a <strong>SetIterator</strong> object</li>
+                <li>Sets can't be accessed by their index like an array, so you use the <strong>.size</strong> property
+                    instead of <strong>.length</strong> property to get the size of the Set</li>
+                <li>Use the <strong>.has()</strong> method to check if an item exists in a Set, the return value will
+                    be a Boolean</li>
+                <li>Use the <strong>.values()</strong> method to return the values in a Set, the return value of the
+                    <strong>.values()</strong> method is a <strong>SetIterator</strong> object</li>
             </ul>
         </div>
 
         <div>
             <h3>8. Sets & Iterators</h3>
             <ul>
-                <li>You can use the Set's default iterator to step through each item in a Set, one by one or use the new <strong>for...of</strong> loop to loop through each item in a Set</li>
-                <li>Because the <strong>.values()</strong> method returns a new iterator object (called <strong>SetIterator)</strong>, you can store that iterator object in a variable and loop through each item in the Set using <strong>.next</strong></li>
+                <li>You can use the Set's default iterator to step through each item in a Set, one by one or use the
+                    new <strong>for...of</strong> loop to loop through each item in a Set</li>
+                <li>Because the <strong>.values()</strong> method returns a new iterator object (called <strong>SetIterator)</strong>,
+                    you can store that iterator object in a variable and loop through each item in the Set using
+                    <strong>.next</strong></li>
             </ul>
         </div>
 
@@ -547,9 +553,12 @@
                     <li>a WeakSet is not iterable which means it can't be looped over</li>
                     <li>a WeakSet does not have a <strong>.clear()</strong> method</li>
                 </ol>
-                <li><strong>Garbage collection</strong> is the process of freeing up memory after it is no longer needed</li>
-                <li>WeakSets take advantage of this by exclusively working with objects, if you set an object to <strong>null</strong>, then you're essentially deleting the object</li>
-                <li>This makes WeakSets useful in situations where you want an efficient, lightweight solution for creating groups of objects</li>
+                <li><strong>Garbage collection</strong> is the process of freeing up memory after it is no longer
+                    needed</li>
+                <li>WeakSets take advantage of this by exclusively working with objects, if you set an object to
+                    <strong>null</strong>, then you're essentially deleting the object</li>
+                <li>This makes WeakSets useful in situations where you want an efficient, lightweight solution for
+                    creating groups of objects</li>
             </ul>
         </div>
 
@@ -571,8 +580,10 @@
         <div>
             <h3>13. Creating & Modifying Maps</h3>
             <ul>
-                <li>Unlike Sets, you can't create Maps from a list of values; instead, you add key-values by using the Map's <strong>.set()</strong> method</li>
-                <li>The <strong>.set()</strong> method takes two arguments, the first argument is the key, which is used to reference the second argument, the value</li>
+                <li>Unlike Sets, you can't create Maps from a list of values; instead, you add key-values by using the
+                    Map's <strong>.set()</strong> method</li>
+                <li>The <strong>.set()</strong> method takes two arguments, the first argument is the key, which is
+                    used to reference the second argument, the value</li>
                 <li>To remove key-value pairs, simply use the <strong>.delete()</strong> method</li>
                 <li>Use the <strong>.clear()</strong> method to remove all key-value pairs from the Map</li>
             </ul>
@@ -581,7 +592,8 @@
         <div>
             <h3>14. Working with Maps</h3>
             <ul>
-                <li>Use the <strong>.has()</strong> method to check if a key-value pair exists in your Map by passing it a key</li>
+                <li>Use the <strong>.has()</strong> method to check if a key-value pair exists in your Map by passing
+                    it a key</li>
                 <li>You can retrieve values from a Map, by passing a key to the <strong>.get()</strong> method</li>
             </ul>
         </div>
@@ -595,8 +607,10 @@
                     <li>Loop through each key-value pair using the new <strong>for...of</strong> loop</li>
                     <li>Loop through each key-value pair using the Map's <strong>.forEach()</strong> method</li>
                 </ol>
-                <li>Using the <strong>.keys()</strong> and <strong>.values()</strong> methods on a Map will return a new iterator object called <strong>MapIterator</strong></li>
-                <li>Using a <strong>for...of</strong> loop with a Map, returns an array where the first element is the key and the second element is the value</li>
+                <li>Using the <strong>.keys()</strong> and <strong>.values()</strong> methods on a Map will return a
+                    new iterator object called <strong>MapIterator</strong></li>
+                <li>Using a <strong>for...of</strong> loop with a Map, returns an array where the first element is the
+                    key and the second element is the value</li>
                 <li>The <strong>.forEach()</strong> method with the help of an arrow function is fairly straightforward</li>
             </ul>
         </div>
@@ -604,7 +618,133 @@
         <div>
             <h3>16. WeakMaps</h3>
             <ul>
-                <li></li>
+                <li>A WeakMap is just like a normal Map with a few key differences:</li>
+                <ol>
+                    <li>a WeakMap can only contain objects as keys,</li>
+                    <li>a WeakMap is not iterable which means it can't be looped and</li>
+                    <li>a WeakMap does not have a <strong>.clear()</strong> method</li>
+                </ol>
+            </ul>
+        </div>
+
+        <div>
+            <h3>17. Promises Intro</h3>
+            <ul>
+                <li>Promises allow work during downtime and then notifies when the request is finished</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>18. Promises</h3>
+            <ul>
+                <li>A JavaScript Promise is created with the new Promise constructor function - <strong>new Promise()</strong></li>
+                <li>A promise will let you start some work that will be done <strong>asynchronously</strong> and let
+                    you get back to your regular work</li>
+                <li>Two functions are passed into the initial function, typically called <strong>resolve</strong> and
+                    <strong>reject</strong></li>
+                <li>The first thing to understand is that a Promise will immediately return an object, the object has a
+                    <strong>.then()</strong> method on it that will notify if the request made in the promise was
+                    either successful or failed</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>19. More Promises</h3>
+            <ul>
+                <li>Promises make it much easier to do asynchronous code</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>20. Proxies Intro</h3>
+            <ul>
+                <li>A JS proxy will let one object stand in for another object to handle all the interactions for that
+                    other object</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>21. Proxies</h3>
+            <ul>
+                <li>To create a proxy object, use the Proxy constructor - <strong>new Proxy();</strong>, it takes two
+                    items:</li>
+                <ul>
+                    <li>the object that it will be the proxy for</li>
+                    <li>an object (called the <strong>handler</strong>) containing the list of methods it will handle
+                        for the proxied object</li>
+                    <li>The <strong>get</strong> trap is used to "intercept" calls to properties, it will take over
+                        whenever any property on the proxy is accessed</li>
+                    <li>The <strong>set</strong> trap is used for intercepting code that will <em>change a property</em></li>
+                    <li>There are a total of 13 different traps that can be used in a handler</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div>
+            <h3>22. Proxies vs. ES5 Getter/Setter</h3>
+            <ul>
+                <li>Initially, it can be a bit unclear as to why proxies are all that beneficial when there are already
+                    getter and setter methods provided in ES5, with ES5's getter and setter methods, you need to know
+                    <em>before hand</em> the properties that are going to be get/set</li>
+                <li>But with proxies, you do not need to initialize the object with getters/setters for each property
+                    when the object is initialized</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>23. Proxies Recap</h3>
+            <ul>
+                <li>The proxy object sits between a real object and the calling code, the calling code interacts with
+                    the proxy instead of the real object</li>
+                <li>To create a proxy:</li>
+                <ul>
+                    <li>use the <strong>new Proxy()</strong> constructor</li>
+                    <ul>
+                        <li>pass the object being proxied as the first item</li>
+                        <li>the second object is a handler object</li>
+                    </ul>
+                    <li>the handler object is made up of 1 of 13 different "traps"</li>
+                    <li>a trap is a function that will intercept calls to properties let you run code</li>
+                    <li>if a trap is not defined, the default behavior is sent to the target object</li>
+                </ul>
+                <li>Proxies are a powerful new way to create and manage the interactions between objects</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>24. Generators</h3>
+            <ul>
+                <li>The asterick of the generator can actually be placed anywhere between the <strong>function</strong>
+                    keyword and the function's name</li>
+                <li>The community has coalesced into having the asterick appear right next to the <strong>function</strong>
+                    keyword (i.e. <strong>function* name() {...}</strong>)</li>
+                <li>Others recommend having the asterick touch the function's name instead</li>
+                <li>It's important to realize that the asterick indicates that it is a generator but that the placement
+                    of the asterick is not important</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>25. Generators & Iterators</h3>
+            <ul>
+                <li>When a generator is invoked, it doesn't actually run any of the code inside the function, instead,
+                    it creates and returns an iterator</li>
+                <li>This iterator can then be used to execute the actual generator's inner code</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>26. Sending Data into/out of a Generator</h3>
+            <ul>
+                <li>So we can get data out of a generator by using the yield keyword, and we can also send data back
+                    <em>into</em> the generator, too by using the <strong>.next()</strong> method</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>27. Lesson 3 Summary</h3>
+            <ul>
+                <li>Watched video clip</li>
             </ul>
         </div>
     </div>
