@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Notes for Object-Oriented JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:700|Roboto:300,400,500," rel="stylesheet">
+</head>
+
+<body>
+    <h1><span>&lt/&gt</span> Object-Oriented JavaScript</h1>
+    <div class="table">
+        <h1>Contents</h1>
+        <ol>
+            <li><a href="#objects">Objects in Depth</a></li>
+            <li><a href="#functions">Functions at Runtime</li>
+            <li><a href="#classes">Classes and Objects</a></li>
+            <li><a href="#design">Object-Oriented Design Patterns</a></li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2 id="objects"><span>#</span> Objects in Depth</h2>
+        <div>
+            <h3>1. Introduction</h3>
+            <ul>
+                <li>The <strong>array</strong> is one of the most useful data structures in JavaScript, at its core, an
+                    array is just an <em>ordered</em> collection of elements, enclosed by square brackets</li>
+                <li>Each element in an array is referenced by a <em>numeric key</em> called an <strong>index</strong>,
+                    which starts from zero and increments by one for each additional element in the array</li>
+                <li><strong>Objects</strong> is another very important data structure in JavaScript, fundamentally, it
+                    is a collection of associated key/value pairs with curly brackets around it</li>
+                <li>Unlike arrays, objects are <em>unordered</em> collections</li>
+                <li>For object key names you'll commonly find quotation marks omited from property names, however
+                    certain situations <em>require</em> them to be included, especially if the property name:</li>
+                <ul>
+                    <li>Is a <strong>reserved word</strong> (e.g., for, if, let, true, etc.)</li>
+                    <li>Contains <strong>spaces or special characters</strong> that cannot appear in a variable name
+                        (i.e., punctuation other that <strong>$</strong>, and <strong>_</strong> -- most accented
+                        characters)</li>
+                </ul>
+                <li>There are two ways to retrieve information from objects: <strong>dot notation</strong> and <strong>square
+                        bracket notation</strong></li>
+                <li>While dot notation may be easier to read and write, it can't be used in every situation, for
+                    example if a key is a number or when variables are assigned to property names</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>2. Create and Modify Properties</h3>
+            <ul>
+                <li>To create a new, blank object, you can use object <strong>literal notation</strong>, or the <strong>Object()</strong>
+                    constructor function</li>
+                <li>While both methods ultimately return an object without properties of its own, the <strong>Object()</strong>
+                    constructor function is a bit slower and more verbose</li>
+                <ul>
+                    <li>As such, the recommended way to create new objects in JavaScript is to use literal notation</li>
+                </ul>
+                <li>Since objects are passed by reference, making changes to the copy has a direct effect on the
+                    original object as well</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Invoking Object Methods</h3>
+            <ul>
+                <li>A <strong>method</strong> is a property of an object whose value is a function</li>
+                <li>Using <strong>this</strong>, methods can directly access the object that it is called on</li>
+                <li>Note that <strong>this</strong> is a reserved word in JavaScript, and cannot be used as an
+                    identifier (e.g. variable names, function names, etc.)</li>
+                <li>The value of <strong>this</strong> is set when a method is invoked on an object, and that value <em>refers
+                        to that object</em></li>
+                <li>Arrow function expressions are special: they don't have their "own" <strong>this</strong>, instead
+                    it takes from the outer "normal" function</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>4. Beware of Globals</h3>
+            <ul>
+                <li>How the function is invoked determines the value of <strong>this</strong> inside the function</li>
+                <li>The <strong>window</strong> object is provided by the browser and is not part of the JavaScript
+                    language or specification</li>
+                <li>Since the <strong>window</strong> object is at the highest (i.e., global) level, an interesting
+                    thing happens with global variable declarations</li>
+                <ul>
+                    <li>Every variable declaration that is made at the global level (outside of a function)
+                        automatically becomes a property on the <strong>window</strong> object</li>
+                    <li>Only declaring variables with the <strong>var</strong> keyword will add them to the <strong>window</strong>
+                        object</li>
+                    <li>If you declare a variable outside of a function with either let or const, it will not be added
+                        as a property to the <strong>window</strong> object</li>
+                </ul>
+                <li>Any global function declarations are accessible on the <strong>window</strong> object as methods</li>
+                <li>Avoid global variables and functions for two reasons, tight coupling and name collisions</li>
+                <li><strong>Tight coupling</strong> is a phrase that developers use to indicate code that is too
+                    dependent on the details of each other</li>
+                <li><strong>Name collision</strong> occurs when two (or more) functions depend on a variable with the
+                    same name</li>
+                <ul>
+                    <li>A major problem wit this is that both functions will try to update the variable and or set the
+                        variable, but these changes are overridden by each other</li>
+                </ul>
+                <li>There <em>are</em> times when you'll need to write global variables, but you should only write them
+                    as a last resort</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>5. Extracting Properties and Values</h3>
+            <ul>
+                <li><strong>Object.keys()</strong> returns an array of the provided object's property names in the same
+                    order as the elements would be when using a <strong>for</strong> loop</li>
+                <li>Likewise, if we want a list of the <em>values</em> of an object, we can use <strong>Object.values()</strong></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>6. Lesson Summary</h3>
+            <ul>
+                <li>Watched video clip</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h2 id="functions"><span>#</span> Functions at Runtime</h2>
+        <div>
+            <h3></h3>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h2 id="classes"><span>#</span> Classes and Objects</h2>
+        <div>
+            <h3></h3>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h2 id="design"><span>#</span> Object-Oriented Design Patterns</h2>
+        <div>
+            <h3></h3>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
