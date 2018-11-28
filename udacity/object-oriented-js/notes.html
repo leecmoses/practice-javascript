@@ -167,17 +167,76 @@
         <div>
             <h3>4. Scope</h3>
             <ul>
-                <li></li>
+                <li><strong>Runtime scope</strong> represents the <em>context</em> of the function, or more specifically, the set of variables available for the function to use</li>
+                <li>JavaScript is function-scoped, functions have access to all its own variables as well as all the global variables outside of it</li>
+                <li>ES6 syntax allows for additonal scope wil declaring variables with the let and const keywords, these keywords used to declare block-scoped variables in JavaScript, and largely replace the need for var</li>
+                <li><strong>Variable shadowing</strong> occurs when a variable declared within a certain scope (decision block, method, or inner class) has the same name as a variable declared in an outer scope</li>
+                <li>If there are any naming overlaps between variables in different contexts, they are all resolved by moving through the scope chain from inner to outer scopes (i.e., local all the way to global)</li>
+                <ul>
+                    <li>This way, any local variables that have the same name take precedence over those with a wider scope</li>
+                </ul>
+                <li>The scope of a function includes:</li>
+                <ol>
+                    <li>The function's arguments</li>
+                    <li>Local variables declared within the function</li>
+                    <li>Variables from its parent function's scope</li>
+                    <li>Global variables</li>
+                </ol>
             </ul>
         </div>
+
+        <div>
+            <h3>5. Closures</h3>
+            <ul>
+                <li>The process of a function retaining access to its scope is called a <strong>closure</strong>, MDN decines a closure as the combination of a function and the lexical environment within which that function was declared</li>
+                <li>Closures allow us to <em>store a snapshot of state</em> at the time the function object is created</li>
+                <li>Strictly speaking, <em>every</em> function has closure because functions close over at least one other context along the scope chain: the global scope</li>
+                <ul>
+                    <li>However, the capabilities of closures really shine when working with a nested function (i.e., a function defined within another function)</li>
+                </ul>
+                <li>These nested functions close over (i.e., <em>capture</em>) variables that aren't passed in as arguments nor defined locally, otherwise known as <strong>free variables</strong></li>
+                <li>Closures are used to create private states, meaning there's no way any external method outside of the closure can access the state or data</li>
+                <li>Powerful applications of closures include passing arguments implicitly and storing a snapshot of scope at function declaration</li>
+                <li>In the context of closures, referenceable variables in JavaScript are <em>not</em> garbage collected!</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management" target="_blank">Memory Management</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target="_blank">Closures</a></li>
+                <li><a href="http://es5.github.io/#x10.2" target="_blank">Lexical Environments</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>6. Immediately-Invoked Function Expressions (IIFE)</h3>
+            <ul>
+                <li>A function <em>declaration</em> defines a function and does not require a variable to be assigned to it, it simply declares a function, and doesn't itself return a value</li>
+                <li>A function <em>expression</em> does return a value and can be either anonymous or named and are commonly assigned to variables</li>
+                <li>An Immediately-Invoked Function Expression, or IIFE, is a function that is called immediately after it is defined</li>
+                <ul>
+                    <li>To create an IIFE wrap a function in parentheses, then add a pair of parentheses at the end of the that to invoke it</li>
+                    <li>The second pair of parentheses no only immediately executes the function preceding it but is also the place to put any arguments that the function may need</li>
+                </ul>
+                <li>One of the primary uses for IIFE's is to create <em>private scope</em> (i.e., private state)</li>
+                <li>IIFEs are <em>very</em> closely related to scope and closures</li>
+                <li>Use an IFFE when you want to execute some code without creating extra global variables, however, note that an IFFE is only intended to be invoked once, to create an unique execution context</li>
+                <li>Cleaning up the global namespace decreases the chance of collisions with duplicate variable names</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>7. Lesson Summary</h3>
+            <ul>
+                <li>Watched video clip</li>
+                <li><a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/" target="_blank">Learning JavaScript Design Patterns</a></li>
+            </ul>
+        </div>
+
     </div>
 
     <div class="section">
         <h2 id="classes"><span>#</span> Classes and Objects</h2>
         <div>
-            <h3></h3>
+            <h3>1. Introduction</h3>
             <ul>
-                <li></li>
+                <li>Since an object can represent data and functionality, we can use an object to express real-life things (i.e., some or something) in code</li>
             </ul>
         </div>
 
